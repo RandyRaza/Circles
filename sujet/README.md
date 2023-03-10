@@ -11,8 +11,7 @@ Notez que ce travail ne peut pas être réalisé sur le serveur Java, qui suppor
 seulement les applications sur la console et pas les applications graphiques.
 
 Le travail doit être réalisé **seul** ou en **équipe** d'au plus **3
-personnes**. Il doit être remis au plus tard le **25 août 2020** à **23h59**.
-À partir de minuit, une pénalité de **2% par heure** de retard sera appliquée.
+personnes**. 
 
 ## Note importante à propos du travail en équipe
 
@@ -49,10 +48,9 @@ Les principaux objectifs visés sont les suivants:
 
 ## Description du travail
 
-Rendez-vous sur le dépôt public
-[https://gitlab.info.uqam.ca/inf3135-ete2020/inf3135-ete2020-tp3](https://gitlab.info.uqam.ca/inf3135-ete2020/inf3135-ete2020-tp3),
+Rendez-vous sur [le dépôt du projet](https://gitlab.info.uqam.ca/inf3135-sdo/jeu),
 clonez-le (avec *fork*) et assurez-vous qu'il soit privé. Donnez accès à votre
-projet à l'utilisateur `blondin_al` en mode *Maintainer*. Si vous êtes en
+projet à l'utilisateur `dogny_g` en mode *Maintainer* et aux correcteurs en mode *Developer*. Si vous êtes en
 équipe, un seul étudiant se charge de cloner le dépôt, de donner accès aux
 autres membres de l'équipe ainsi qu'à l'enseignant.
 
@@ -112,18 +110,7 @@ quelques suggestions (vous êtes évidemment libres de ne pas en tenir compte):
   objets sont statiques pour ensuite les animer
 
 Une bonne façon de comprendre le fonctionnement de la bibliothèque SDL est de
-vous familiariser avec la coquille de projet qui vous est fournie ou d'étudier
-le [jeu Maze](https://bitbucket.org/ablondin-projects/maze-sdl). Quelques
-remarques s'imposent par rapport à cette petite application:
-
-- Dans ce travail pratique, vous n'aurez pas besoin des bibliothèques TMX et
-  XML sur lesquelles est basée le jeu. Par contre, pour faire tourner le jeu
-  Maze, vous devez installer TMX/XML.
-- Il y a un module qui permet de gérer les feuilles de sprites. N'hésitez pas à
-  le récupérer et à l'adapter à vos besoins (sans oublier de citer la source!).
-- Étudiez soigneusement la façon d'implémenter les machines à états dans Maze,
-  qui sont des patrons fondamentaux dans le développement d'applications
-  graphiques (plus de détails dans une sous-section plus bas).
+vous familiariser avec la coquille de projet qui vous est fournie. 
 
 ## Ressources graphiques
 
@@ -234,22 +221,22 @@ suivants, mais n'hésitez pas à en ajouter si nécessaire.
 Afin d'éviter des pénalités, il est important de respecter les contraintes
 suivantes :
 
-- Le nom de votre projet doit être exactement `inf3135-ete2020-tp3`
+- Le nom de votre projet doit être exactement `inf3135-hiver2023-tp3`
 - L'URL de votre projet doit être exactement
-  `https://gitlab.info.uqam.ca/<nom utilisateur>/inf3135-ete2020-tp3`, où
+  `https://gitlab.info.uqam.ca/<nom utilisateur>/inf3135-hiver2023-tp3`, où
   `<nom d'utilisateur>` est votre nom ou votre code MS.
 - Aucune variable globale (à l'exception des constantes) n'est permise;
 - Vos modifications doivent **compiler** sans **erreur** et sans
   **avertissement** lorsqu'on entre `make`.
-- Vous devez donner accès en mode *Maintainer* à l'utilisateur `blondin_al`
+- Vous devez donner accès en mode *Maintainer* à l'utilisateur `dogny_g` et aux correcteurs en mode *Developer*
 
 Advenant le non-respect d'une ou plusieurs de ces contraintes, une pénalité de
 **50%** pourra être appliquée.
 
 ## Remise
 
-Votre travail doit être remis au plus tard le **25 août 2020** à **23h59**.  À
-partir de minuit, une pénalité de **2% par heure** de retard sera appliquée.
+Votre travail est automatiquement remis à la date de remise prévue. Vous n'avez rien de plus à faire. Assurez-vous d’avoir votre travail disponible sur votre branche `main` qui sera considérée pour la correction. Tous les commits après le **24 avril 2023** à **23h59** ne seront pas considérés pour la correction.
+
 La remise se fait **obligatoirement** par l'intermédiaire du [GitLab du
 département](https://gitlab.info.uqam.ca/).
 
