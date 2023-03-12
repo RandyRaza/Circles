@@ -243,8 +243,7 @@ département](https://gitlab.info.uqam.ca/).
 Les travaux ne pourront pas être corrigés sur le serveur Java, qui ne permet
 pas d'exécuter une application graphique. Vous devez cependant vous assurer que
 votre programme fonctionne **sans modification** sur au moins une distribution
-Linux telle que Ubuntu ou Mint. Aucun travail ne sera corrigé sur **Windows**
-ou **MacOS**.
+Linux telle que Ubuntu ou Mint ou sur **MacOS**. Aucun travail ne sera corrigé sur **Windows**.
 
 ## Barème
 
