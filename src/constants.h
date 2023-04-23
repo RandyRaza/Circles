@@ -21,4 +21,26 @@
 #define DIFFICULTY_FILENAME "../assets/difficulty-small.png"
 #define DIFFICULTY_WIDTH 325
 #define DIFFICULTY_X (0.5 * SCREEN_WIDTH - 0.5 * DIFFICULTY_WIDTH)
-#define DIFFICULTY_Y (0.8 * SCREEN_HEIGHT)
+#define DIFFICULTY_Y (0.85 * SCREEN_HEIGHT)
+#define EASY_FILENAME "../assets/easy-small.png"
+#define EASY_WIDTH 100
+#define EASY_X (0.5 * SCREEN_WIDTH - 0.5 * EASY_WIDTH)
+#define EASY_Y (0.8 * SCREEN_HEIGHT)
+#define MEDIUM_FILENAME "../assets/medium-small.png"
+#define MEDIUM_WIDTH 100
+#define MEDIUM_X (0.5 * SCREEN_WIDTH - 0.5 * MEDIUM_WIDTH)
+#define MEDIUM_Y (0.8 * SCREEN_HEIGHT)
+#define HARD_FILENAME "../assets/hard-small.png"
+#define HARD_WIDTH 100
+#define HARD_X (0.5 * SCREEN_WIDTH - 0.5 * HARD_WIDTH)
+#define HARD_Y (0.8 * SCREEN_HEIGHT)
+#define BACKGROUND2_FILENAME "../assets/Background2.png"
+#define BACKGROUND2_X 0
+#define BACKGROUND2_Y 0
+#define NUM_SECTORS 6
+#define SECTOR_ANGLE 60
+#define WHITE_COLOR 255, 255, 255, 255
+#define GRAY_COLOR 128, 128, 128, 255
+
+
+

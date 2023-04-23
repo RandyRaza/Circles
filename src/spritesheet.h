@@ -2,6 +2,7 @@
 #define SPRITESHEET_H
 
 #include "sdl2.h"
+#include "stdlib.h"
 
 struct spritesheet {
     int num_rows;           // The number of rows in the sprite sheet

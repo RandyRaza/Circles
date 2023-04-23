@@ -4,6 +4,7 @@
 #include "sdl2.h"
 #include "constants.h"
 #include "menu.h"
+#include "play.h"
 
 // --------------- //
 // Data structures //
@@ -18,6 +19,7 @@ enum application_state {
 struct application {
     enum application_state state; // The current state
     struct menu *menu;            // The home menu
+    struct play *play;
     SDL_Window* window;           // The window
     SDL_Renderer* renderer;       // The renderer
 };

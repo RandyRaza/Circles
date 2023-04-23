@@ -1,6 +1,7 @@
 #include "application.h"
 #include "sdl2.h"
 #include <stdio.h>
+#include <SDL2/SDL_mixer.h>
 
 int main() {
     struct application *application = application_initialize();
