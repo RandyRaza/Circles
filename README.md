@@ -2,62 +2,53 @@
 
 ## Description
 
-* Description du projet en quelques phrases.
-* Mentionner le contexte (cours, sigle, université, etc.).
+* Conception d'un jeu Circles, qui reprend l'idée du jeu Super Hexagon.
+* le but du jeu étant de manipuler un personnage, (représenté par un triangle) afin d'éviter des murs qui se rapprochent
+* du triangle.
+* Projet réalisé dans le cadre du cours INF3135 - 
 
-## Auteurs
+## Auteur
 
-- Prénom et nom (Code permanent)
-- Prénom et nom (Code permanent)
-- Prénom et nom (Code permanent)
+- Randy Razafindrabe RAZR11308805
 
 ## Dépendances
 
-Avant même d'expliquer le fonctionnement de votre programme, décrivez toutes
-les dépendances de votre projet, autant au niveau des logiciels (s'il y en a)
-que des bibliothèques (par exemple SDL2). Fournissez les liens vers les sites
-officiels des dépendances si possible. Ceci permettra à l'utilisateur de savoir
-ce qu'il doit installer pour faire tourner votre programme. Pas besoin
-d'expliquer comment faire l'installation, mais simplement référer aux sites
-officiels.
+SDL2/SDL2_gfxPrimitives.h
+SDL2/SDL_mixer.h
+application.h
+constants.h
+menu.h
+play.h
+sdl2.h
+spritesheet.h
+stdbool.h
+stdio.h
+stdlib.h
+
 
 ## Fonctionnement
 
-* Expliquez comment compiler, comment lancer l'application et comment
-  fonctionne le jeu
-* Quel est sont but?
-* Quelles touches permettent de naviguer dans le menu?
-* Quelles touches permettent de déplacer le triangle?
-* N'hésitez pas à inclure des captures d'écran ici, comme ça, ça fait de la
-  publicité pour votre jeu!
+* Pour compiler le programme, il faut simplement utiliser la commande `make`, une fois compilé un exécutable sera créé 
+  entrer `./circles` en ligne de commande pour lancer la partie. Une fois la partie lancée, l'utilisateur pourra choisir
+  un niveau de difficulté en utilisant les flèches directionnelles du clavier. La partie continuera tant que le joueur 
+  n'a pas perdu la partie.
+* Le jeu reprend le principe du jeu Super hexagon, le joueur est représenté par un petit triangle 
+  qui doit bouger autour d'un disque central pour éviter les murs qui se rapprochent.
+* Les touches pour naviguer dans le menu sont les flèches de direction
+* De la même manière que le menu, le triangle est supposé se déplacer grace au flèches du clavier
+
 
 ## Plateformes supportées
 
-Indiquez toutes les plateformes sur lesquelles vous avez testé l'application,
-avec la version.
+l'application a été testé sur le système d'exploitation MacOs, cependant il devrait fonctionner sans problème sur un 
+environnement Linux.
 
-## Références
-
-Citez vos sources ici, s'il y a lieu.
 
 ## Division des tâches
 
-Donnez ici une liste des tâches de chacun des membres de l'équipe. Utilisez la
-syntaxe suivante (les crochets vides indiquent que la tâche n'est pas
-complétée, les crochets avec un `X` indique que la tâche est complétée):
-
-* [ ] Gestion du menu (Alice)
-* [ ] Affichage de la scène (Bob)
-* [ ] Affichage du chronomètre (Carl)
-* [ ] Animation des murs (Bob)
-* [X] Animation du joueur (Alice)
-* [ ] Détection des collisions (Carl)
-* [ ] Affichage d'une partie terminée (Bob)
-* [X] Gestion de la musique principale (Alice)
-* [ ] Gestion des sons lorsqu'on navigue dans le menu (Alice)
-* [ ] Gestion de la musique de fin de partie (Carl)
+ J'ai réalisé ce travail seul.
 
 ## État du projet
 
-Indiquer si le projet est complété et sans bogue. Sinon, expliquez ce qui
-manque ou ce qui ne fonctionne pas.
+Le projet n'est pas terminé, il faut implémenter toute la partie "Jeu", seule la musique et le choix des niveaux de 
+difficulté ont été réalisés.
