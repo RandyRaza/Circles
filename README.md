@@ -13,17 +13,17 @@
 
 ## Dépendances
 
-SDL2/SDL2_gfxPrimitives.h
-SDL2/SDL_mixer.h
-application.h
-constants.h
-menu.h
-play.h
-sdl2.h
-spritesheet.h
-stdbool.h
-stdio.h
-stdlib.h
+- SDL2/SDL2_gfxPrimitives.h
+  - SDL2/SDL_mixer.h
+  - application.h
+  - constants.h
+  - menu.h
+  - play.h
+  - sdl2.h
+  - spritesheet.h
+  - stdbool.h
+  - stdio.h
+  - stdlib.h
 
 
 ## Fonctionnement
