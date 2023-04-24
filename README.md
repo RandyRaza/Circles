@@ -13,17 +13,17 @@
 
 ## Dépendances
 
-* SDL2/SDL2_gfxPrimitives.h
-* SDL2/SDL_mixer.h
-* application.h
-* constants.h
-* menu.h
-* play.h
-* sdl2.h
-* spritesheet.h
-* stdbool.h
-* stdio.h
-* stdlib.h
+`SDL2/SDL2_gfxPrimitives.h`
+`SDL2/SDL_mixer.h`
+`application.h`
+`constants.h`
+`menu.h`
+`play.h`
+`sdl2.h`
+`spritesheet.h`
+`stdbool.h`
+`stdio.h`
+`stdlib.h`
 
 
 ## Fonctionnement
@@ -40,7 +40,7 @@
 
 ## Plateformes supportées
 
-l'application a été testé sur le système d'exploitation MacOs, cependant il devrait fonctionner sans problème sur un 
+l'application a été testée sur le système d'exploitation MacOs, cependant il devrait fonctionner sans problème sur un 
 environnement Linux.
 
 
