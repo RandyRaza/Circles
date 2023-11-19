@@ -1,4 +1,4 @@
-# Travail pratique 3 : Le jeu *Circles*
+Jeu *Circles*
 
 ## Description
 
@@ -9,7 +9,7 @@
 
 ## Auteur
 
-- Randy Razafindrabe RAZR11308805
+- Randy Razafindrabe
 
 ## Dépendances
 
