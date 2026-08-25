@@ -2,6 +2,7 @@
 #include "sdl2.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <SDL2/SDL_mixer.h>
 
 struct application *application_initialize() {
@@ -14,21 +15,22 @@ struct application *application_initialize() {
         fprintf(stderr, "Warning: Linear texture filtering not enabled!");
     }
 
-    // Initialisation de la bibliothèque SDL2_mixer
+    // Seeded once here rather than in play_initialize, since play_initialize
+    // is called again every time a new game starts and reseeding too close
+    // together would make wall placement less random.
+    srand((unsigned int)time(NULL));
+
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
         fprintf(stderr, "SDL_mixer could not initialize: %s\n", Mix_GetError());
         return NULL;
     }
-
-    // Chargement de la musique depuis un fichier mp3
     Mix_Music *music = Mix_LoadMUS("../assets/courtesy.mp3");
     if (music == NULL) {
         fprintf(stderr, "Failed to load music: %s\n", Mix_GetError());
         return NULL;
     }
-
-    // Lancement de la musique en boucle
     Mix_PlayMusic(music, -1);
+
     application = malloc(sizeof(struct application));
     application->window = SDL_CreateWindow("Maze",
                                            SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
@@ -43,18 +45,20 @@ struct application *application_initialize() {
         fprintf(stderr, "Renderer could not be created: %s\n", SDL_GetError());
         return NULL;
     }
+
     int imgFlags = IMG_INIT_PNG;
     if (!(IMG_Init(imgFlags) & imgFlags)) {
         fprintf(stderr, "SDL_image failed to initialize: %s\n", IMG_GetError());
         return NULL;
     }
+
     application->menu = menu_initialize(application->renderer);
     if (application->menu == NULL) {
         fprintf(stderr, "Failed to initialize menu: %s\n", IMG_GetError());
         return NULL;
     }
-
-    application->play = play_initialize(application->renderer);
+    // Default difficulty until the player actually picks one in the menu.
+    application->play = play_initialize(application->renderer, PLAY_MEDIUM);
     if (application->play == NULL) {
         fprintf(stderr, "Failed to initialize play: %s\n", IMG_GetError());
         return NULL;
@@ -65,7 +69,6 @@ struct application *application_initialize() {
 }
 
 void application_run(struct application *application) {
-
     while (application->state != APPLICATION_STATE_QUIT) {
         switch (application->state) {
             case APPLICATION_STATE_MENU:
@@ -74,8 +77,11 @@ void application_run(struct application *application) {
                     application->state = APPLICATION_STATE_QUIT;
                 } else if (application->menu->state == MENU_PLAY) {
                     application->state = APPLICATION_STATE_PLAY;
-                    // Création de l'instance de play
-                    application->play = play_initialize(application->renderer);
+                    // Replace the placeholder play session with a fresh one
+                    // that actually uses the difficulty the player confirmed.
+                    play_delete(application->play);
+                    application->play = play_initialize(application->renderer,
+                                                         application->menu->selected_difficulty);
                     if (application->play == NULL) {
                         fprintf(stderr, "Failed to initialize play!\n");
                         application->state = APPLICATION_STATE_QUIT;
@@ -84,6 +90,16 @@ void application_run(struct application *application) {
                 break;
             case APPLICATION_STATE_PLAY:
                 play_run(application->play);
+                if (application->play->state == PLAY_QUIT) {
+                    application->state = APPLICATION_STATE_QUIT;
+                } else if (application->play->state == PLAY_LOST ||
+                           application->play->state == PLAY_BACK_TO_MENU) {
+                    // Reset the menu's focus so menu_run's own loop
+                    // (while state != MENU_PLAY && state != MENU_QUIT)
+                    // runs again instead of exiting immediately.
+                    application->menu->state = MENU_PLAY_FOCUS;
+                    application->state = APPLICATION_STATE_MENU;
+                }
                 break;
             case APPLICATION_STATE_QUIT:
                 break;
