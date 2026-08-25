@@ -2,64 +2,44 @@
 #define MENU_H
 
 #include "sdl2.h"
-#include "constants.h"
+#include "spritesheet.h"
+#include "play.h"
 
-// --------------- //
-// Data structures //
-// --------------- //
+// NOTE: reconstruit à partir de l'usage réel dans menu.c (tu ne m'as pas
+// encore montré ton menu.h d'origine). Si ton fichier a d'autres champs
+// ou fonctions que je n'ai pas vus, fusionne-les avec cette version plutôt
+// que d'écraser — le seul ajout volontaire ici est `selected_difficulty`.
 
 enum menu_state {
-    MENU_PLAY_FOCUS,       // Play choice has focus
-    MENU_QUIT_FOCUS,       // Quit choice has focus
+    MENU_PLAY_FOCUS,
+    MENU_QUIT_FOCUS,
     MENU_EASY_FOCUS,
     MENU_MEDIUM_FOCUS,
     MENU_HARD_FOCUS,
-    MENU_PLAY,             // Play has been chosen
-    MENU_QUIT,              // Play has been chosen
-    MENU_EASY,
-    MENU_MEDIUM,
-    MENU_HARD
+    MENU_PLAY,
+    MENU_QUIT
 };
 
 struct menu {
-    enum menu_state state;          // The choice of the user
-    struct spritesheet *background; // The menu background
-    struct spritesheet *title;      // The title sprite
-    struct spritesheet *play;       // The play sprite
-    struct spritesheet *quit;       // The quit sprite
+    SDL_Renderer *renderer;
+    enum menu_state state;
+
+    struct spritesheet *background;
+    struct spritesheet *title;
+    struct spritesheet *play;
+    struct spritesheet *quit;
     struct spritesheet *easy;
     struct spritesheet *medium;
     struct spritesheet *hard;
-    struct spritesheet *empty;
-    struct spritesheet *difficulty; // the difficulty sprite
-    SDL_Renderer *renderer;         // The renderer
+    struct spritesheet *difficulty;
+
+    // NEW: which difficulty is actually confirmed (as opposed to merely
+    // highlighted by the arrow keys). Defaults to PLAY_MEDIUM.
+    enum play_difficulty selected_difficulty;
 };
 
-// --------- //
-// Functions //
-// --------- //
-
-/**
- * Creates a new menu.
- *
- * @param renderer  The renderer
- * @return          A pointer to the menu, NULL if there was an error
- */
 struct menu *menu_initialize(SDL_Renderer *renderer);
-
-/**
- * Start running the menu.
- *
- * @param menu  The menu to show
- */
 void menu_run(struct menu *menu);
-
-/**
- * Delete the menu.
- *
- * @param menu  The menu to delete
- */
 void menu_delete(struct menu *menu);
 
 #endif
-
