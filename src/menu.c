@@ -3,6 +3,7 @@
 #include "sdl2.h"
 #include <stdlib.h>
 #include <stdbool.h>
+#include "constants.h"
 
 struct menu *menu_initialize(SDL_Renderer *renderer) {
     struct menu *menu;
