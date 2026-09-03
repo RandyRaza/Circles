@@ -7,7 +7,7 @@ EXEC = circles
 OBJS = $(patsubst %.c,%.o,$(wildcard *.c))
 all: $(EXEC)
 $(EXEC): $(OBJS)
-	$(CC) $(LDFLAGS) $^ -o $@
+	$(CC) $^ $(LDFLAGS) -o $@
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
